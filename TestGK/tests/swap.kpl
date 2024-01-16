@@ -1,0 +1,36 @@
+Program Swap;
+
+Var
+    x : Integer;
+    y : Integer;
+    z : Integer;
+    t : Integer;
+
+Begin
+    x := readi;
+    y := readi;
+    z := readi;
+    t := readi;
+
+    call writeln;
+
+    call writei(x);
+    call writec(' ');
+    call writei(y);
+    call writec(' ');
+    call writei(z);
+    call writec(' ');
+    call writei(t);
+    call writeln;
+
+    x, y, z, t := y, z, t, x+y;
+
+    call writei(x);
+    call writec(' ');
+    call writei(y);
+    call writec(' ');
+    call writei(z);
+    call writec(' ');
+    call writei(t);
+    call writeln;
+End.

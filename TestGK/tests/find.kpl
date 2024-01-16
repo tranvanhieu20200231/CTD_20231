@@ -1,0 +1,53 @@
+Program FindSecondMin;
+Var A: Array(.10.) of Integer;
+    Min1: Integer;
+	Min2: Integer;
+	i: Integer;
+Procedure InputArray;
+Var i: Integer;
+Begin
+  For i := 1 To 3 Do
+    A(.i.) := READI;
+End;
+Procedure Find;
+Begin
+  If A(.1.) < A(.2.)  Then
+  Begin
+    If A(.1.) < A(.3.) Then
+    Begin
+      Min1 := A(.1.);
+      If A(.2.) < A(.3.) Then
+        Min2 := A(.2.)
+      Else
+        Min2 := A(.3.);
+    End
+  End
+  Else If A(.2.) < A(.1.) Then
+  Begin
+    If A(.2.) < A(.3.) Then
+    Begin
+      Min1 := A(.2.);
+      If A(.1.) < A(.3.) Then
+        Min2 := A(.1.)
+      Else
+        Min2 := A(.3.);
+    End
+	Else Min2 := A(.2.);
+  End
+  Else 
+  Begin
+    If A(.2.) < A(.3.) Then
+      Min2 := A(.3.)
+    Else
+      Min2 := A(.2.);
+  End;
+End;
+Procedure OutputResult;
+Begin
+  CALL WRITEI(Min2);
+End;
+Begin
+  CALL InputArray;
+  CALL Find;
+  CALL OutputResult;
+End.
